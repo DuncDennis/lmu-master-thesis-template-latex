@@ -1,0 +1,46 @@
+% Preamble
+\include{preamble}
+
+% Formulas
+\include{formulas}
+
+% Document
+\begin{document}
+
+    % add the titlepage:
+    \input{titlepage}
+
+    % set roman pagenumbering and reset page to 1:
+    \pagestyle{empty}
+    \pagenumbering{roman}
+    \setcounter{page}{1}
+
+    % add table of contect:
+    \tableofcontents
+    \newpage
+    \afterpage{\blankpage} % comment out if tableofcontents is more than one page long
+
+    % set arabic pagenumbering and reset page to 1:
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
+    \normalheadfoot
+
+    % add the main chapters:
+    \input{sections/01_Introduction}
+    \input{sections/02_ExampleChapter}
+
+    % add appendix:
+    \appendix
+    \input{sections/appendix}
+
+    % add bibliography:
+    \bibliography{main}
+    \bibliographystyle{unsrt}  % numbers as they appear in the text
+    \addcontentsline{toc}{chapter}{Bibliography} % to add Bibliography to table of content (toc)
+    \newpage
+
+    % add acknowledgement and declaration at the end:
+    \input{sections/acknowledgement}
+    \input{sections/declaration}
+
+\end{document}

@@ -1,0 +1,68 @@
+% Preamble
+
+%%% Documentclass:
+% 10pt: Size of main font.
+% twoside: odd pagenumber closer to left, and even closer to right.
+% a4paper: Paper size.
+% openright: New chapters begin on right hand pages (odd numbers).
+\documentclass[10pt, twoside, openright]{report}
+
+%%% geometry:
+% Specify width of the text and top/bottom white spaces
+% specify the binding offset with bindingoffset
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=5mm]{geometry}
+
+%%% Headers and footers:
+\usepackage{fancyhdr}
+\newcommand{\normalheadfoot}{\pagestyle{fancy}}
+% Use to adjust the header size
+\newcommand{\changefont}{\fontsize{9}{11}\selectfont}
+\fancyhead[]{}  % clear all settings for header
+\fancyhead[RO]{\changefont \rightmark}  % Writes the section name on the right side of the right (odd) pages. RO = Right-Odd
+\fancyhead[LE]{\changefont \leftmark}  % Writes the chapter name on the left side of the left (even) pages. LE = Left-Even
+
+%%%Paragraphs
+\usepackage{parskip} % sets the paragraph indent to zero
+
+%%% Language:
+\usepackage[utf8]{inputenc} % for umlaute, like ä, ü, ..
+\usepackage{afterpage}
+\usepackage [english]{babel} % for german dates
+\selectlanguage{english}
+
+%%% Hyperlinks for citations and sections.
+\usepackage{hyperref}
+
+%%% Math environments:
+\usepackage{amsmath}
+\usepackage{amstex}
+\usepackage{amssymb}  % more math symbols like matrix transpose "\intercal"
+\usepackage{mathtools} % Used for ":=" symbol accessed by "\coloneqq"
+
+%% Algorithm environments:
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+%%% Figures:
+\usepackage{graphicx}
+
+% to use subfigures and subcaptions
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+%%% Titlepage variables:
+\newcommand{\englishtitle}{English Title}
+\newcommand{\germantitle}{Deutscher Titel}
+\newcommand{\authorname}{Author Name}
+\newcommand{\supervisor}{Supervisor Name}
+\newcommand{\englishsubmissiondate}{February 8, 2023}
+\newcommand{\germansubmissiondate}{8. Februar 2023}
+
+%%% Commands:
+% Blank page without page numbering:
+\newcommand\blankpage{
+    \null
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \newpage}
