@@ -9,3 +9,7 @@ The template includes:
 - German declaration at the end
 - Example citation
 - Example figures 
+- The resulting example PDF under /example_output
+
+Compiling: 
+- The compilation of the files was performed using the [PyCharm TeXiFy IDEA extension](https://plugins.jetbrains.com/plugin/9473-texify-idea), which I can recommend! 
